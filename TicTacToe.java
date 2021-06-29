@@ -9,6 +9,7 @@ public class TicTacToe {
         ticTacToe.CreateEmptyTable();
         char playerChar = ticTacToe.playerSymbol();
         ticTacToe.displayBoard();
+        ticTacToe.makeMove(playerChar);
     }
 
     public void CreateEmptyTable() {
@@ -38,5 +39,17 @@ public class TicTacToe {
             System.out.println();
         }
     }
-    
+    public void makeMove(char playerChar){
+        boolean flag = true;
+        while(flag)
+        System.out.println("Enter the cell number between 1-9 where you want to input");
+        int cell = sc.nextInt();
+        if(Character.valueOf(table[cell]).compareTo(null) == 0) {
+            table[cell] = playerChar;
+            flag=false;
+        }
+        else{
+            System.out.println("the cell is not empty enter other cell");
+        }
+    }
 }
