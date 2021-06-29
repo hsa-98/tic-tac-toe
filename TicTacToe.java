@@ -41,15 +41,21 @@ public class TicTacToe {
     }
     public void makeMove(char playerChar){
         boolean flag = true;
-        while(flag)
-        System.out.println("Enter the cell number between 1-9 where you want to input");
-        int cell = sc.nextInt();
-        if(Character.valueOf(table[cell]).compareTo(null) == 0) {
-            table[cell] = playerChar;
-            flag=false;
-        }
-        else{
-            System.out.println("the cell is not empty enter other cell");
+        while(flag) {
+            System.out.println("Enter the cell number between 1-9 where you want to input");
+            int cell = sc.nextInt();
+            if (cell > 0 && cell < 10) {
+                if (Character.valueOf(table[cell]).compareTo(null) == 0) {
+                    table[cell] = playerChar;
+                    flag = false;
+                } else {
+                    System.out.println("the cell is not empty enter other cell");
+                }
+            } else {
+                System.out.println("Input out of bounds enter valid input");
+            }
         }
     }
+
+    public void
 }
